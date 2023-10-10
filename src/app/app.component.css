@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* GERAL------------------------------------------------------------> */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+/* TABLE------------------------------------------------------------> */
+
+.content {
+    margin: 1px 30px 10px 30px;
+    min-height: calc(100vh - 300px);
+}
+
+table {
+    width: 100%;
+}
+  
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+td, th {
+    width: 25%;
+}
+
+/* TITLE------------------------------------------------------------> */
+
+.title-table {
+    display: flex;
+    justify-content: center;
+}
+
+.title-table h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8em;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .title-table h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2em;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 450px) {
+    .title-table h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+}
+
+/* HEADER-----------------------------------------------------------> */
+
+.header {
+    background: linear-gradient(135deg, rgb(216, 19, 19), rgb(150, 52, 52));
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.logo {
+    max-width: 60px;
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.header li + li {
+    margin-left: 30px;
+}
+
+@media (max-width: 760px) {
+    .header > .logo {
+        margin-right: 10px;
+    }
+
+    .header li + li {
+        margin-left: 10px;
+    }
+}
+
+
+/* FOOTER-----------------------------------------------------------> */
+.footer {
+    position: relative;
+    background: linear-gradient(135deg, rgb(216, 19, 19), rgb(150, 52, 52));
+}
+
+.footer p {
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
