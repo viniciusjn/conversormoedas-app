@@ -14,4 +14,12 @@ export class CurrencyService {
   getCurrenciesNames(): Observable<any> {
     return this.http.get(`${this.apiURL}${this.apiKey}/codes`);
   }
+
+  getExchangeRate(base: string, target: string, amount?: number): Observable<any> {
+    let url = `${this.apiURL}${this.apiKey}/pair/${base}/${target}`;
+    if (amount) {
+      url += `/${amount}`;
+    }
+    return this.http.get(url);
+  }
 }
