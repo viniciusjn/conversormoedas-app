@@ -1,14 +1,15 @@
 <div class="title-table">
     <h1>RELAÇÃO DAS MOEDAS</h1>
 </div>
+
 <div class="content">
+
     <div class="search">
         <mat-form-field>
         <mat-label>filtro...</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. BRL" #input>
         </mat-form-field>
     </div>
-    
     <div class="custom-table-container">
         <table mat-table [dataSource]="dataSource" matSort class="custom-table">
     
@@ -28,6 +29,7 @@
     
         <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
     </div>
+    
 </div>
   
   

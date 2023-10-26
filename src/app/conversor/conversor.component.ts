@@ -6,7 +6,9 @@ import { CurrencyService } from '../currency.service';
   templateUrl: './conversor.component.html',
   styleUrls: ['./conversor.component.css']
 })
+
 export class ConversorComponent {
+
   moedas: any[] = []; // Deve ser um array de objetos com propriedades 'name' e 'symbol'
   moedaOrigem: string = '';
   moedaDestino: string = '';

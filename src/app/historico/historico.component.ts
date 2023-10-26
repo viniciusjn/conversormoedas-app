@@ -7,7 +7,9 @@ import { HistoricoService } from './historico.service';
   templateUrl: './historico.component.html',
   styleUrls: ['./historico.component.css']
 })
+
 export class HistoricoComponent implements OnInit {
+  
   history: ConversionHistoryItem[] = [];
 
   constructor(private historyService: HistoricoService) { }

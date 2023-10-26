@@ -12,7 +12,9 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.css']
 })
+
 export class ListagemComponent implements OnInit {
+
   displayedColumns: string[] = ['symbol','name'];
   dataSource: MatTableDataSource<IListCurrencies> = new MatTableDataSource<IListCurrencies>([]);
   pageSize: number = 10;
@@ -55,5 +57,4 @@ export class ListagemComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
 }

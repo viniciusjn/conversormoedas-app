@@ -1,8 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
-/* GERAL------------------------------------------------------------> */
 
+/* GERAL------------------------------------------------------------> */
 img {
     display: block;
     width: 100%;
@@ -15,6 +14,7 @@ body {
     padding: 0;
     font-family: 'Kanit', "Helvetica Neue", sans-serif;
 }
+
 
 /* TITLE------------------------------------------------------------> */
 .title-table {
@@ -42,7 +42,6 @@ body {
         font-weight: 500;
     }
 }
-
 
 
 /* ARTICLE----------------------------------------------------------> */
@@ -88,7 +87,7 @@ body {
 }
 
 
-.tabela-periodica {
+.historia-moedas {
     margin: 25px auto;
     justify-content: center;
     align-items: center;
@@ -100,16 +99,16 @@ body {
 }
 
 @media (max-width: 1015px) {
-    .tabela-periodica {
+    .historia-moedas {
         margin: 15px 10px;
     }
 }
 
-.tabela-periodica-h1 {
+.historia-moedas-h1 {
     margin: 0 auto;
 }
 
-.tabela-periodica-img {
+.historia-moedas-img {
     margin: 0 auto;
     max-width: 400px;
 }

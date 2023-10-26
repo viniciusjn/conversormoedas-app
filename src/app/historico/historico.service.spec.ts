@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { HistoricoService } from './historico.service';
 
 describe('HistoricoService', () => {

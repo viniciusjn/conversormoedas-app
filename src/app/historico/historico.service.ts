@@ -4,7 +4,9 @@ import { ConversionHistoryItem  } from './historico-item.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HistoricoService {
+  
   private history: ConversionHistoryItem[] = [];
 
   addToHistory(conversion: ConversionHistoryItem) {

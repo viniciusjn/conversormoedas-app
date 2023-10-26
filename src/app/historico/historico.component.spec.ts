@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HistoricoComponent } from './historico.component';
 
 describe('HistoricoComponent', () => {

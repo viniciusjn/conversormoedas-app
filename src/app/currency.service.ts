@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CurrencyService {
+  
   private apiURL = 'https://v6.exchangerate-api.com/v6/';
   private apiKey = 'f85d3e9605a460f59db27625'; // Substitua pelo seu token de API
 

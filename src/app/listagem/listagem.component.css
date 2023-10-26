@@ -1,3 +1,4 @@
+/* GERAL------------------------------------------------------------> */
 li {
     list-style: none;
 }
@@ -20,28 +21,7 @@ body {
 }
 
 
-/* TABLE------------------------------------------------------------> */
-
-.content {
-    margin: 1px 30px 10px 30px;
-    min-height: calc(100vh - 300px);
-}
-
-table {
-    width: 100%;
-}
-  
-.mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-}
-  
-td, th {
-    width: 25%;
-}
-
 /* TITLE------------------------------------------------------------> */
-
 .title-table {
     display: flex;
     justify-content: center;
@@ -67,4 +47,24 @@ td, th {
         font-size: 1.5em;
         font-weight: 500;
     }
+}
+
+
+/* TABLE------------------------------------------------------------> */
+.content {
+    margin: 1px 30px 10px 30px;
+    min-height: calc(100vh - 300px);
+}
+
+table {
+    width: 100%;
+}
+  
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+td, th {
+    width: 25%;
 }

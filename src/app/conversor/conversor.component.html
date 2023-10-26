@@ -1,27 +1,47 @@
-<mat-form-field>
-    <mat-label>Moeda de Origem</mat-label>
-    <mat-select [(ngModel)]="moedaOrigem">
-        <mat-option *ngFor="let moeda of moedas" [value]="moeda.symbol">{{ moeda.name }} ({{ moeda.symbol }})</mat-option>
-    </mat-select>
-</mat-form-field>
+<div class="content">
 
-<mat-form-field>
-    <mat-label>Moeda de Destino</mat-label>
-    <mat-select [(ngModel)]="moedaDestino">
-        <mat-option *ngFor="let moeda of moedas" [value]="moeda.symbol">{{ moeda.name }} ({{ moeda.symbol }})</mat-option>
-    </mat-select>
-</mat-form-field>
+    <div class="conversor">
+      <h1 class="conversor-h1">Conversor</h1>
+      <section class="text">
+        <p>Se uma empresa exporta um produto e recebe na moeda estrangeira, precisa converter para o real quando o dinheiro entrar no país via banco, por exemplo. No caso de importação de produtos, a conversão é feita no dia da compra e venda para equiparar o real à moeda do país de origem do produto adquirido. Faça aqui seu teste com a maioria das moedas do mundo!</p>
+      </section>
+      <section class="conversor-img">
+        <img src="../../assets/img/logo.png" alt="" class="conversor-image">
+      </section>
+    </div>
 
-<mat-form-field>
-    <mat-label>Valor a ser convertido</mat-label>
-    <input matInput [(ngModel)]="valor" type="number">
-</mat-form-field>
+    <div class="conversor">
+        <mat-form-field class="moedas-valor">
+            <mat-label>Moeda de origem</mat-label>
+            <mat-select [(ngModel)]="moedaOrigem">
+                <mat-option *ngFor="let moeda of moedas" [value]="moeda.symbol">{{ moeda.name }} ({{ moeda.symbol }})</mat-option>
+            </mat-select>
+        </mat-form-field>
 
-<button (click)="converterMoeda()">Converter</button>
+        <mat-form-field class="moedas-valor">
+            <mat-label>Moeda de destino</mat-label>
+            <mat-select [(ngModel)]="moedaDestino">
+                <mat-option *ngFor="let moeda of moedas" [value]="moeda.symbol">{{ moeda.name }} ({{ moeda.symbol }})</mat-option>
+            </mat-select>
+        </mat-form-field>
 
-<div *ngIf="valorConvertido && taxaDeConversao">
-    <p>{{ valor }} em {{ moedaOrigem }} equivale a {{ valorConvertido }} {{ moedaDestino }}</p>
-    <p>Taxa de conversão utilizada: {{ taxaDeConversao }}</p>
+        <mat-form-field class="moedas-valor">
+            <mat-label>Valor</mat-label>
+            <input matInput [(ngModel)]="valor" type="number">
+        </mat-form-field>
+
+        <br>
+        <div class="botao">
+            <button (click)="converterMoeda()" class="glow-on-hover" type="button">CONVERTER</button>
+        </div>
+
+        <br>
+        <div *ngIf="valorConvertido && taxaDeConversao">
+            <p>{{ valor }} em {{ moedaOrigem }} equivale a {{ valorConvertido }} {{ moedaDestino }}</p>
+            <p>Taxa de conversão utilizada: {{ taxaDeConversao }}</p>
+        </div>
+    </div>
+    
 </div>
   
   
