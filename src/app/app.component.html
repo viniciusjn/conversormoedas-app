@@ -1,20 +1,6 @@
 <app-navbar></app-navbar>
-<div class="title-table">
-  <h1>RELAÇÃO DAS MOEDAS</h1>
-</div>
 
-
-<h1>Lista de Moedas</h1>
-<table>
-  <tr>
-    <th>Símbolo</th>
-    <th>Nome</th>
-  </tr>
-  <tr *ngFor="let currency of currencies | keyvalue">
-    <td>{{ currency.key }}</td>
-    <td>{{ currency.value }}</td>
-  </tr>
-</table>
+<router-outlet></router-outlet>
 
 <!-- <div class="content">
   <mat-form-field>
