@@ -3,7 +3,20 @@
   <h1>RELAÇÃO DAS MOEDAS</h1>
 </div>
 
-<div class="content">
+
+<h1>Lista de Moedas</h1>
+<table>
+  <tr>
+    <th>Símbolo</th>
+    <th>Nome</th>
+  </tr>
+  <tr *ngFor="let currency of currencies | keyvalue">
+    <td>{{ currency.key }}</td>
+    <td>{{ currency.value }}</td>
+  </tr>
+</table>
+
+<!-- <div class="content">
   <mat-form-field>
     <mat-label>filtro..</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Gabigol" #input>
@@ -37,6 +50,6 @@
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
-</div>
+</div> -->
 <app-footer></app-footer>
 
