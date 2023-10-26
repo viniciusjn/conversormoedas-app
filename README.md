@@ -40,7 +40,7 @@ npm install -g @angular/cli
 
 ### -> instalação
 
-Com o Node e Angular instalado, você deverá primeiramente clonar o repositório em uma pasta de sua preferência:
+Com o Node e Angular instalados, você deverá primeiramente clonar o repositório em uma pasta de sua preferência:
 
 ```
 git clone https://github.com/viniciusjn/conversormoedas-app.git
