@@ -35,7 +35,7 @@ npm --version
 Necessita também do [Angular - CLI](https://angular.io/cli) instalado, caso não tenha, digite o comando abaixo e o terá:
 
 ```
-npm --version
+npm install -g @angular/cli
 ```
 
 ### -> instalação
