@@ -10,7 +10,7 @@ O objetivo principal era a criação de um conversor de moedas através do consu
 - o consumo de API foi feito em arquivos TypeScript;
 - além da conversão de moedas, foi feita também a listagem de todas as moedas que a API disponibilizava;
 - a tabela de listagem é interativa, com ordenação, paginação, quantidade de itens exibidos por linha e filtro;
-- API utilizada: [ExchangeRate-API](https://www.exchangerate-api.com/)
+- API utilizada: [ExchangeRate-API](https://www.exchangerate-api.com/);
 
 ### Ferramentas e Tecnologias
 
@@ -32,9 +32,15 @@ Você necessita ter o [Node.js](https://nodejs.org/en) instalado na sua máquina
 npm --version
 ```
 
+Necessita também do [Angular - CLI](https://angular.io/cli) instalado, caso não tenha, digite o comando abaixo e o terá:
+
+```
+npm --version
+```
+
 ### -> instalação
 
-Com o Node instalado, você deverá primeiramente clonar o repositório em uma pasta de sua preferência:
+Com o Node e Angular instalado, você deverá primeiramente clonar o repositório em uma pasta de sua preferência:
 
 ```
 git clone https://github.com/viniciusjn/conversormoedas-app.git
