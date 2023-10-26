@@ -18,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ConversorComponent } from './conversor/conversor.component';
 import { ListagemComponent } from './listagem/listagem.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ListagemComponent } from './listagem/listagem.component';
     FooterComponent,
     ConversorComponent,
     ListagemComponent,
+    HomeComponent,
   ],
   imports: [
     AppRoutingModule,
