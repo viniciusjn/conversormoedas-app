@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ConversorComponent } from './conversor/conversor.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { HomeComponent } from './home/home.component';
+import { HistoricoComponent } from './historico/historico.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     ConversorComponent,
     ListagemComponent,
     HomeComponent,
+    HistoricoComponent,
   ],
   imports: [
     AppRoutingModule,

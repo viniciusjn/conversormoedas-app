@@ -1,0 +1,23 @@
+<div>
+    <h1>Historical Conversions</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>From Currency</th>
+          <th>To Currency</th>
+          <th>Exchange Rate</th>
+          <th>Amount Converted</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conversion of history">
+          <td>{{ conversion.fromCurrency }}</td>
+          <td>{{ conversion.toCurrency }}</td>
+          <td>{{ conversion.exchangeRate }}</td>
+          <td>{{ conversion.amountConverted }}</td>
+          <td>{{ conversion.date | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
