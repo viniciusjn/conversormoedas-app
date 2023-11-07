@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ConversionHistoryItem } from './historico-item.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from "@angular/material/table";
+import { IListHistory } from "../model/IListHistory";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
 import { HistoricoService } from './historico.service';
 
 @Component({
@@ -10,11 +13,47 @@ import { HistoricoService } from './historico.service';
 
 export class HistoricoComponent implements OnInit {
   
-  history: ConversionHistoryItem[] = [];
+  displayedColumns: string[] = [
+    'data',
+    'hora',
+    'moedaOrigem',
+    'moedaDestino',
+    'valorEntrada',
+    'valorSaida',
+    'taxaConversao',
+    'acoes',
+  ];
 
-  constructor(private historyService: HistoricoService) { }
+  history: MatTableDataSource<IListHistory> = new MatTableDataSource<IListHistory>([]);
+
+    @ViewChild('input', { static: true }) input: HTMLInputElement | undefined;
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | undefined;
+    @ViewChild(MatSort, { static: true }) sort: MatSort | undefined;
+
+    constructor(private listConversionService: HistoricoService) {
+        this.history = new MatTableDataSource<IListHistory>([]);
+    }
 
   ngOnInit(): void {
-    this.history = this.historyService.getHistory();
+    const historyData = JSON.parse(localStorage.getItem('history') || '[]');
+    historyData.reverse();
+    this.history.data = historyData;
+
+    if (this.paginator) {
+      this.history.paginator = this.paginator;
+    }
+    if (this.sort) {
+      this.history.sort = this.sort;
+    }
+  }
+
+  excluirHistorico(conversao: IListHistory) {
+      this.history.data = this.listConversionService.   obterHistoricoCompleto();
+      this.listConversionService.excluirHistorico(conversao);
+  }
+
+  applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.history.filter = filterValue.trim().toLowerCase();
   }
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrencyService } from '../currency.service';
+import { HistoricoService } from '../historico/historico.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-conversor',
@@ -9,14 +11,15 @@ import { CurrencyService } from '../currency.service';
 
 export class ConversorComponent {
 
-  moedas: any[] = []; // Deve ser um array de objetos com propriedades 'name' e 'symbol'
+  moedas: any[] = [];
   moedaOrigem: string = '';
   moedaDestino: string = '';
   valor: number = 0;
   valorConvertido: number = 0;
   taxaDeConversao: number = 0;
+  mostrarResultado: boolean = false;
 
-  constructor(private currencyService: CurrencyService) {}
+  constructor(private currencyService: CurrencyService, private listConversionService: HistoricoService) {}
 
   converterMoeda() {
     if (this.moedaOrigem && this.moedaDestino && this.valor) {
@@ -25,6 +28,22 @@ export class ConversorComponent {
           if (response.result === 'success' && response.conversion_rate) {
             this.valorConvertido = response.conversion_result;
             this.taxaDeConversao = response.conversion_rate;
+            this.mostrarResultado = true;
+
+            const id = uuidv4();
+            const conversao = {
+              id: id,
+              data: new Date(),
+              hora: new Date(),
+              moedaOrigem: this.moedaOrigem,
+              moedaDestino: this.moedaDestino,
+              valorEntrada: this.valor,
+              valorSaida: this.valorConvertido,
+              taxaConversao: this.taxaDeConversao
+            };
+            this.listConversionService.adicionarConversao(conversao);
+            const conversaoString = JSON.stringify(conversao);
+            localStorage.setItem('conversao-1', conversaoString);
           }
         },
         (error: any) => {
@@ -33,6 +52,8 @@ export class ConversorComponent {
       );
     } else {
       console.error('Por favor, preencha todos os campos antes de converter.');
+      const mensagemDeErro = 'Por favor, preencha todos os campos antes de converter.';
+      window.alert(mensagemDeErro);
     }
   }
 
