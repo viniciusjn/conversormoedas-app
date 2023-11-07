@@ -8,8 +8,8 @@ O objetivo principal era a criação de um conversor de moedas através do consu
 - projeto responsivo;
 - era necessário a utilização de Angular em toda aplicação;
 - o consumo de API foi feito em arquivos TypeScript;
-- além da conversão de moedas, foi feita também a listagem de todas as moedas que a API disponibilizava em uma tabela;
-- a tabela é interativa, com ordenação, paginação, quantidade de itens exibidos por linha e filtro;
+- além da conversão de moedas, foi feita também a listagem de todas as moedas que a API disponibilizava em uma tabela e em outra tabela um histórico de conversões realizadas pelo usuário armazenadas em localStorage;
+- ambas as tabelas são interativas, com ordenação, paginação, quantidade de itens exibidos por linha e filtro;
 - API utilizada: [ExchangeRate-API](https://www.exchangerate-api.com/);
 
 ### Ferramentas e Tecnologias
